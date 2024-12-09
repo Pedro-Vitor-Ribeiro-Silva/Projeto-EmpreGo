@@ -19,10 +19,22 @@
                 <div class="mb-3">
                     <label for="titulo" class="form-label">Título da Vaga</label>
                     <input type="text" class="form-control" id="titulo" name="titulo" value="{{ vaga.titulo }}" required>
+                     <div class="valid-feedback">
+                        Parece bom!
+                      </div>
+                      <div class="invalid-feedback">
+                        Preencha o campo corretamente.
+                      </div>
                 </div>
                 <div class="mb-3">
                     <label for="descricao" class="form-label">Descrição da Vaga</label>
                     <textarea class="form-control" id="descricao" name="descricao" rows="5" required>{{ vaga.descricao }}</textarea>
+                    <div class="valid-feedback">
+                        Parece bom!
+                      </div>
+                      <div class="invalid-feedback">
+                        Preencha o campo corretamente.
+                      </div>
                 </div>
                 <div class="mb-3">
                     <label for="formato" class="form-label">Formato de Trabalho</label>
@@ -31,6 +43,12 @@
                         <option {% if vaga.formato == 'Remoto' %} selected  {% endif %} value="Remoto">Remoto</option>
                         <option {% if vaga.formato == 'Híbrido' %} selected  {% endif %} value="Híbrido">Híbrido</option>
                     </select>
+                    <div class="valid-feedback">
+                        Parece bom!
+                      </div>
+                      <div class="invalid-feedback">
+                        Preencha o campo corretamente.
+                      </div>
                 </div>
                 <div class="mb-3">
                     <label for="tipo" class="form-label">Tipo de Contrato</label>
@@ -38,6 +56,12 @@
                         <option {% if vaga.tipo == 'CLT' %} selected  {% endif %} value="CLT">CLT</option>
                         <option {% if vaga.tipo == 'PJ' %} selected  {% endif %} value="PJ">PJ</option>
                     </select>
+                    <div class="valid-feedback">
+                        Parece bom!
+                      </div>
+                      <div class="invalid-feedback">
+                        Preencha o campo corretamente.
+                      </div>
                 </div>
                 <div class="mb-3">
                     <label for="local" class="form-label">Local da Vaga (se aplicável)</label>
@@ -54,5 +78,30 @@
         </div>
     </div>
 </div>
+
+<script>
+    // Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      }
+
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
+</script>
+
+
+
 
 {% endblock %}

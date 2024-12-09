@@ -28,7 +28,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="telefone" class="form-label">Telefone</label>
-                    <input type="text" class="form-control" id="telefone" name="telefone" required>
+                    <input type="text" class="form-control" id="telefone" name="telefone" maxlength="11" required>
                     <div class="valid-feedback">
                         Parece bom!
                       </div>
@@ -89,5 +89,19 @@
   })
 })()
 </script>
+
+<script>
+  document.querySelector('#telefone').addEventListener('input', (e) => {
+      const input = e.target;
+      input.value = input.value.replace(/\D/g, '').slice(0, 11); // Apenas números e máximo de 11 dígitos
+      if (input.value.length < 10) {
+          input.setCustomValidity('Telefone inválido. Deve conter DDD e o número (mínimo 10 dígitos).');
+      } else {
+          input.setCustomValidity('');
+      }
+  });
+  </script>
+
+
 
 {% endblock %}
