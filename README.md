@@ -36,7 +36,7 @@ O EmpreGO! é uma plataforma web que visa conectar candidatos a empresas que ofe
 
 ## Como Executar o Projeto
 
-1. **Clone o Repositório:** `git clone https://github.com/seu-usuario/EmpreGO.git`
+1. **Clone o Repositório:** `git clone https://github.com/seu-usuario/Projeto-EmpreGo.git`
 2. **Crie o Banco de Dados:** Execute o script `scriptBD.sql` no seu servidor MySQL para criar o banco de dados e as tabelas necessárias.
 3. **Configure as Credenciais do Banco de Dados:**  Edite o arquivo `config.py` com as suas credenciais do MySQL.
 4. **Instale as Dependências:** `pip install -r requirements.txt`
